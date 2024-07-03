@@ -42,14 +42,21 @@ function App() {
     setQuestions([...questions, newQuestion]);
   }
 
-  function handleDeleteQuestion(id) {
-    setQuestions(questions.filter((question) => question.id !== id));
-  }
-
+  // function handleDeleteQuestion(id) {
+  //   setQuestions(questions.filter((question) => question.id !== id));
+  // }
   
 
+  // function handleUpdateQuestion(updatedQuestion) {
+  //   setQuestions(questions.map((q) => (q.id === updatedQuestion.id ? updatedQuestion : q)));
+  // }
+  function handleDeleteQuestion(id) {
+    setQuestions(questions.filter(q => q.id !== id))
+  }
   function handleUpdateQuestion(updatedQuestion) {
-    setQuestions(questions.map((q) => (q.id === updatedQuestion.id ? updatedQuestion : q)));
+    setQuestions(questions.map(q => (
+      q.id === updatedQuestion.id ? updatedQuestion : q
+    )))
   }
 
   return (
